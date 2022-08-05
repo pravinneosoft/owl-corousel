@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+<title>
+    hello
+</title>
+<style>
+    .parent{
+        height: 300px;
+        width: 300px;
+        background-color: red;
+        display: flex;
+        align-items: center;
+    }
+    .child{
+        height: 80px;
+        width: 80px;
+        background-color: blue;
+    }
+</style>
+</head>
+<body>
+<div class="parent"id="parentid" >parent div calling
+<div class="child"id="childid" >child div calling</div></div>
+<script>
+   let parentID=document.getElementById("parentid");
+   let childID=document.getElementById("parentid");
+    let parentfun = ()=>{
+        alert("parent call")
+    }
+    let childfun = ()=>{
+        alert("child call")
+        event.stopPropagation()
+    }
+    parentID.addEventListener("click",parentfun,true);
+   childID.addEventListener("click",childfun,true);
+</script>
+</body>
+</html>

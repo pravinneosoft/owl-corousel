@@ -1,0 +1,15 @@
+h1{
+    font-size: 370px;
+    color: rgb(51, 255, 0);
+    text-transform: uppercase;  
+    @include media-breakpoint-up(sm) { 
+        font-size: 170px;
+        color: aqua;
+        text-transform: uppercase;  
+     }
+     @include media-breakpoint-up(lg) { 
+        font-size: 142px;
+        color: red;
+        text-transform: uppercase;  
+     }
+}

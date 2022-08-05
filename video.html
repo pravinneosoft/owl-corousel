@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .video {
+  width: 100%;
+  border: 1px solid black;
+}
+
+.wrapper {
+  display: table;
+  width: auto;
+  position: relative;
+  width: 50%;
+}
+
+.playpause {
+  background-image: url(https://png-4.findicons.com/files/icons/2315/default_icon/256/media_play_pause_resume.png);
+  background-repeat: no-repeat;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  margin: auto;
+  background-size: contain;
+  background-position: center;
+}
+
+.playpause {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+
+.playpause[hidden] {
+  opacity: 0;
+  display: block;
+}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <video class="video">
+          <source src="http://e14aaeb709f7cde1ae68-a1d0a134a31b545b257b15f8a8ba5726.r70.cf3.rackcdn.com/projects/31432/1427815464209-bf74131a7528d0ea5ce8c0710f530bb5/1280x720.mp4" type="video/mp4" />
+        </video>
+        <div class="playpause"></div>
+      </div>
+
+      <script>
+          function toggleVideo({ currentTarget: wrapper }) {
+  let video = wrapper.querySelector('.video');
+  let playpause = wrapper.querySelector('.playpause');
+  if (video.paused) {
+    video.play();
+    playpause.setAttribute('hidden', '');
+  } else {
+    video.pause();
+    playpause.removeAttribute('hidden');
+  }
+}
+
+document.querySelectorAll('.wrapper')
+  .forEach(wrapper => wrapper.addEventListener('click', toggleVideo));
+      </script>
+</body>
+</html>

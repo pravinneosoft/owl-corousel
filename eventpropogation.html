@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<head>
+<title>
+    hello
+</title>
+<style>
+    .parent{
+        height: 300px;
+        width: 300px;
+        background-color: red;
+        display: flex;
+        align-items: center;
+    }
+    .child{
+        height: 80px;
+        width: 80px;
+        background-color: blue;
+    }
+</style>
+</head>
+<body>
+<div class="parent" onclick="parentfun()">parent div calling
+<div class="child" onclick="childfun()">child div calling</div></div>
+<script>
+    let parentfun = ()=>{
+        alert("parent call")
+    }
+    let childfun = ()=>{
+        alert("child call")
+        event.stopPropagation()
+    }
+</script>
+</body>
+</html>
